@@ -4,6 +4,7 @@ public class Calculos {
     private double valor1;
     private double valor2;
     int opcion=0;
+
 //creamos el metodo para realizar los calculos
     public static double calc (double valor1,double valor2,int opcion){
 
