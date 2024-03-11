@@ -35,5 +35,15 @@ public class Raices {
         return RESULTADO;
 
     }
+    // Creamos un metodo para implementar un ejemplo de la raíz de cualquier indice
+    public static double todosIndices(){
+
+    // Con Math.pow se puede hacer una raíz del indice deseado, en este caso se esta haciendo la raiz quinta de veinte
+        double RAIZDETODOS = Math.pow(20, 5);
+
+   //Retornamos el resultado
+        return RAIZDETODOS;
+
+    }
 
 }
