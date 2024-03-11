@@ -11,4 +11,9 @@ double llamadas "RADICANDO", que sera el número del cual se realice la raíz, y
 un IF en el cual, si INDICE es igual a 2 se realiza la raiź cuadrada, y la varaiable RESULTADO pasara a contener el resultado de la raíz cuadrada, y si INDICE es igual 
 a 3, se realizará la raíz cúbica y lla variable RESULTADO pasará a contener el resultado de la raíz cúbica
 
-5.- Generamos el .jar, y lo subimos a github para hacer la release
+5.- Creamos otro metodo que dentro contiene una variable llamada RAIZDETODOS con un Math.pow, a la que dentro se le 
+especifica el indice y el radicando deseados
+
+6.- Generamos el .jar, y lo subimos a github para hacer la release
+
+
