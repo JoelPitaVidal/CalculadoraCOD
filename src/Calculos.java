@@ -1,58 +1,70 @@
-
+/**
+ * Esta libreria se utiliza para hacer operacines
+ */
 public class Calculos {
-//creamos los atributos de ambos operandos
-    private double valor1;
-    private double valor2;
-    int opcion=0;
+    /**
+     * Opcion para elegir Sumar
+     */
+    public static final int SUMA = 2;
+    /**
+     * Opcion para elegir Restar
+     */
+    public static final int RESTA = 3;
+    /**
+     * Opcion para elegir Multiplicar
+     */
+    public static final int MULTIPLICACION = 4;
+    /**
+     * Opcion para elegir Dividir
+     */
+    public static final int DIVISION = 5;
+    /**
+     * Opcion para elegir Raiz de caulquier indice
+     */
+    public static final int RAIZ = 6;
 
-//creamos el metodo para realizar los calculos
-    public static double calc (double valor1,double valor2,int opcion){
+    /**
+     *
+     * @param valor1 primer operando para lás operaciones
+     * @param valor2 segundo operando para lás operaciones
+     * @param calculos opción para seleccionar la operación que se desea realizar
+     * @return devuelve resultado de la operación
+     */
 
-     double resultado=0;
 
 
-
-//hacemos la suma
-    double suma = valor1+valor2;
-//Hacemos la resta
-    double resta=0;
-        if (valor1>valor2){
-             resta = valor1-valor2;
-        } else if (valor2>valor1) {
-             resta = valor2 - valor1;
+    public static double calc (int valor1,int valor2,int calculos){
+        double resultado= 0;
+        switch (calculos){
+            case SUMA:
+                resultado = valor1+valor2;
+                break;
+            case RESTA:
+                if (valor1>valor2){
+                    resultado = valor1-valor2;
+                } else if (valor2>valor1) {
+                    resultado= valor2 - valor1;
+                }
+                break;
+             case MULTIPLICACION:
+                 resultado = valor1*valor2;
+                 break;
+            case DIVISION:
+                try {
+                    if (valor1>valor2){
+                        resultado= valor1/valor2;
+                    } else if (valor2>valor1) {
+                        resultado= valor2/valor1;
+                    }
+                }catch (ArithmeticException ex){
+                    resultado = 0; //igualo a cero la división
+                    System.out.println("Error: "+ex.getMessage());
+                }
+                break;
+            case RAIZ:
+                resultado =  Math.pow(valor1, 1.0/ valor2);
+                break;
         }
-//Hacemos la multiplicación
-    double mult = valor1*valor2;
-//Hacemos la división
-        double div=0;
-//Hacemos un Try/Catch para manejar la posibilidad de que se intente dividir entre cero
-        try {
-            if (valor1>valor2){
-                div = valor1/valor2;
-            } else if (valor2>valor1) {
-                div = valor2/valor1;
-            }
-        }catch (ArithmeticException ex){
-        div = 0; //igualo a cero la división
-            System.out.println("Error: "+ex.getMessage());
-        }
-
-//Preguntamos al usuario que resultado quiere mostrar
-        switch (opcion){
-            case 1:
-                resultado=suma;
-                break;
-            case 2:
-                resultado=resta;
-                break;
-             case 3:
-                resultado=mult;
-                break;
-            case 4:
-                resultado=div;
-                break;
-        }
-//devolvemos el resultado deseado
         return resultado;
     }
 }
