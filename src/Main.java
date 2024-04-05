@@ -5,7 +5,7 @@ public class Main {
      *
      */
     public static void main(String[] args) {
-        double resultado= Calculos.calc(10,2,4);
+        double resultado= Calculos.calc(10,2,Calculos.MULTIPLICACION);
         System.out.println("El resultado de "+resultado);
 
     }
